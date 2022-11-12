@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <div class="menu">
+        <nav>
+       <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Product</a>
+        <div class="subproduct">
+            <ul>
+                <il><a href="shoes.html">Football shoes</a></il><br>
+                <il><a href="shirt.html">Football shirts</a></il>
+            </ul>
+        </div>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+       </ul> 
+    </nav>
+    </div>
+
+    <!-- FORM -->
+    <h1>FORM</h1>
+    <div class="box">
+        <form id="form" action="">
+            <div class="container">
+                <input type="text" placeholder="EMAIL" id="email"><br>
+                <input type="text" placeholder="PASSWORD" id="password"><br>
+                <input type="text" id="mail" placeholder="MESSAGE">
+                <label for="male">Male: &nbsp;&nbsp;&nbsp;</label>
+                <input type="radio" id="male" name="gender"><br>
+                <label for="female">Female:</label>
+                <input type="radio" id="female" name="gender"><br>
+                <p id="error"></p>
+                <p id="success"></p>
+                <button id="submit">Submit</button>
+            </div>
+            
+    
+        </form> 
+    </div>
+    <script src="contact.js"></script>
+</body>
+</html>

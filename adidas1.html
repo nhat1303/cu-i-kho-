@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="mainwebproduct1.css"> -->
+    <style>
+        * {
+    padding: 0;
+    margin: 0;
+}
+
+.menu {
+    background-color: rgb(82, 81, 81);
+    text-align: center;
+    height: 80px;
+    width: 100%;
+    position:fixed;
+    top:0;
+    z-index: 100;
+
+}
+.menu ul {
+    display: inline-flex;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    
+    
+}
+.menu ul li {
+    margin-top: 30px;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+}
+.menu ul li a {
+    text-decoration: none;
+    color: white;
+    
+
+}
+
+.menu ul li a:hover {
+    color: rgb(153, 145, 145);
+}
+.subproduct {
+    display: none;
+    width: 200px;
+    height: 80px;
+}
+.menu ul li:hover .subproduct {
+    display: block;
+    position: absolute;
+    background-color: rgb(82, 81, 81);
+
+}
+.menu ul li:hover .subproduct ul {
+    display: block;
+    margin-top: 20px;
+    font-size: 20px;
+}
+/* MENU  */
+
+.box {
+    height: 100vh;
+    width: 100%;
+
+}
+
+img {
+    width: 420px;
+    height: 450px;
+    
+}
+.img1 {
+    margin-top: 50px;
+}
+img:hover {
+    transform: scale(1.5);
+    transition: ease 0.5s;
+    cursor: pointer;
+}
+.price {
+    position: absolute;
+    left: 70%;
+    top: 20%;
+}
+
+input {
+    margin-top: 18px;
+    margin-left: 30px;
+    width: 25px;
+    height: 25px;
+    
+}
+button {
+    width: 300px;
+    height: 50px;
+    border-radius: 6px;
+    border: none;
+    background-color: green;
+    position: absolute;
+    top: 120%;
+    right: 5%;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(51, 226, 51);
+}
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <nav>
+       <ul>
+        <li><a href="mainweb.html">Home</a></li>
+        <li><a href="">Product</a>
+        <div class="subproduct">
+            <ul>
+                <il><a href="shoes.html">Football shoes</a></il><br>
+                <il><a href="shirt.html">Football shirts</a></il>
+            </ul>
+        </div>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+       </ul> 
+    </nav>
+    </div>
+    <div class="box">
+        <div class="box1">
+            <img class="img1" src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/49bea405d26c4a16bbf5ae9b010648c4_9366/COPA_SENSE.1_FG_Mau_vang_GW3604_01_standard_hover.jpg" alt="">
+            <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/cc5c22b8139e40b6b6e0ae9b010663b0_9366/COPA_SENSE.1_FG_Mau_vang_GW3604_02_standard.jpg" alt="" class="img2">
+        </div>
+        <div class="box2">
+            <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1110ddb5644347f68987ae9b01067162_9366/COPA_SENSE.1_FG_Mau_vang_GW3604_03_standard.jpg" alt="" class="img3">
+            <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/92f0b744e0d8467693c0ae9b01067e9e_9366/COPA_SENSE.1_FG_Mau_vang_GW3604_04_standard.jpg" alt="" class="img4">
+        </div>
+        <div class="price">
+            <h2>COPA SENSE.1 FG</h2>
+            <h3>$250</h3>
+            <form id="form" action="">
+                <label for="">41</label>
+                <input type="radio" placeholder="41" name="size" id="size1"><br>
+                <label for="">42</label>
+                <input type="radio" placeholder="42" name="size" id="size2"><br>
+                <label for="">43</label>
+                <input type="radio" placeholder="43" name="size" id="size3">
+                <p id="error"></p>
+                <p id="done"></p>
+                <button id="submit">BUY</button>
+            </form>
+            
+        </div>
+    </div>
+    <script >
+        const form = document.getElementById('form')
+const errorElement = document.getElementById('error')
+const size1 =document.getElementById("size1")
+const size2 =document.getElementById("size2")
+const size3 =document.getElementById("size3")
+form.addEventListener('submit', (e) => {
+
+  let messages = [];
+  
+if (size1.checked==true){
+    messages.push("")
+  }else if (size2.checked== true){
+    messages.push("")
+  }else if (size3.checked == true){
+    messages.push("")
+  }
+  else {
+    messages.push("Size is required")
+  }
+
+  if (messages.length > 0) {
+    e.preventDefault()
+    errorElement.innerText = messages.join(" ")
+    errorElement.style.color = "red"
+  } 
+  
+})
+    </script>
+</body>
+</html>
